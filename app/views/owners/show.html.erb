@@ -3,3 +3,6 @@
 <p><strong>Name:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
 <p><strong>Email:</strong> <%= @owner.email %></p>
 <p><strong>Phone Number:</strong> <%= @owner.phone %></p>
+<%= link_to "Edit Owner", edit_owner_path %>
+<%= link_to "view this owner's pets", owner_pets_path(@owner) %>
+<%= button_to "Delete Owner", @owner, method: :delete, class:"btn btn-danger"%>

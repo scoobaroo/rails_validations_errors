@@ -1,21 +1,8 @@
 class PetsController < ApplicationController
-
   def index
+    owner_id = params[:id]
+    @owner = Owner.find_by(id: owner_id)
+    @pets = @owner.pets
+    render :index
   end
-
-  def new
-  end
-
-  def create
-  end
-
-  def show
-  end
-
-
-  private
-  def pet_params
-    params.require(:pet).permit(:name, :breed, :date_of_birth)
-  end
-
 end
